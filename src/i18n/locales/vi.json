@@ -346,6 +346,30 @@
       "loginLink": "Đăng nhập",
       "successMessage": "Tạo tài khoản thành công! Vui lòng kiểm tra email để xác minh tài khoản của bạn."
     },
+    "oauth": {
+      "google": "Tiếp tục với Google",
+      "apple": "Tiếp tục với Apple",
+      "or": "hoặc"
+    },
+    "claim": {
+      "title": "Xác Nhận Danh Tính",
+      "subtitle": "Tìm kiếm và liên kết tài khoản của bạn với hồ sơ trong gia phả",
+      "searchLabel": "Tìm kiếm hồ sơ của bạn",
+      "searchPlaceholder": "Nhập tên của bạn...",
+      "search": "Tìm Kiếm",
+      "resultsTitle": "Kết quả tìm kiếm",
+      "bornOn": "Sinh ngày",
+      "claimButton": "Đây là tôi",
+      "notFound": "Không tìm thấy hồ sơ của bạn?",
+      "createNew": "Tạo hồ sơ mới",
+      "successTitle": "Đăng ký thành công!",
+      "successMessage": "Tài khoản của bạn đã được tạo và hồ sơ đã được liên kết.",
+      "pendingApproval": "⏳ Tài khoản của bạn đang chờ phê duyệt từ quản trị viên. Bạn sẽ nhận được thông báo qua email khi được phê duyệt.",
+      "returnToLogin": "Quay lại đăng nhập",
+      "noResults": "Không tìm thấy kết quả nào. Hãy thử tìm kiếm với tên khác hoặc tạo hồ sơ mới.",
+      "searchError": "Lỗi khi tìm kiếm. Vui lòng thử lại.",
+      "claimError": "Lỗi khi liên kết hồ sơ. Vui lòng thử lại."
+    },
     "errors": {
       "fillAllFields": "Vui lòng điền đầy đủ các trường bắt buộc",
       "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
@@ -353,7 +377,8 @@
       "emailExists": "Email này đã được đăng ký",
       "invalidCredentials": "Email hoặc mật khẩu không hợp lệ",
       "loginFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
-      "signUpFailed": "Đăng ký thất bại. Vui lòng thử lại."
+      "signUpFailed": "Đăng ký thất bại. Vui lòng thử lại.",
+      "notAuthenticated": "Bạn chưa đăng nhập"
     },
     "logout": "Đăng Xuất"
   },

@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import { Users, TreePine, Network, UsersRound, Moon, Sun, Languages, LogOut } from 'lucide-react'
+import { Users, TreePine, Network, UsersRound, Moon, Sun, Languages, LogOut, Shield } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PersonList } from './components/PersonList'
 import { FamilyTreeView } from './components/FamilyTreeView'
 import { FamilyGroupsList } from './components/FamilyGroupsList'
 import { Login } from './components/Login'
-import { SignUp } from './components/SignUp'
+import { SignUpWithClaim } from './components/SignUpWithClaim'
+import { UserManagement } from './components/UserManagement'
 import { usePersonStore } from './store/usePersonStore'
 import { useTheme } from './contexts/ThemeContext'
 import { useAuth } from './contexts/AuthContext'
 
-type View = 'home' | 'people' | 'tree' | 'groups'
+type View = 'home' | 'people' | 'tree' | 'groups' | 'users'
 type AuthView = 'login' | 'signup'
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   const { persons } = usePersonStore()
   const { theme, toggleTheme } = useTheme()
   const { t, i18n } = useTranslation()
-  const { user, loading, signOut } = useAuth()
+  const { user, userProfile, permissions, loading, signOut } = useAuth()
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'vi' : 'en'
@@ -51,9 +52,40 @@ function App() {
           <Login onSwitchToSignUp={() => setAuthView('signup')} />
         )}
         {authView === 'signup' && (
-          <SignUp onSwitchToLogin={() => setAuthView('login')} />
+          <SignUpWithClaim onSwitchToLogin={() => setAuthView('login')} />
         )}
       </>
+    )
+  }
+
+  // Show pending approval message if user is not approved
+  if (userProfile && !userProfile.approved) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center p-4">
+        <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-yellow-600 rounded-full mb-4">
+            <Shield className="w-8 h-8 text-white" />
+          </div>
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            Pending Approval
+          </h1>
+          <p className="text-gray-600 mb-6">
+            Your account is awaiting approval from an administrator. You'll receive an email notification once your account is approved.
+          </p>
+          <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 px-4 py-3 rounded-lg text-sm mb-6">
+            <p className="font-medium mb-2">Account Details:</p>
+            <p>Role: {userProfile.role}</p>
+            <p>Email: {user.email}</p>
+          </div>
+          <button
+            onClick={handleSignOut}
+            className="w-full bg-gray-600 text-white py-3 rounded-lg font-medium hover:bg-gray-700 transition-colors flex items-center justify-center gap-2"
+          >
+            <LogOut className="w-5 h-5" />
+            Sign Out
+          </button>
+        </div>
+      </div>
     )
   }
 
@@ -168,6 +200,19 @@ function App() {
               <UsersRound className="w-5 h-5" />
               <span>{t('nav.groups')}</span>
             </button>
+            {userProfile?.role === 'OWNER' && (
+              <button
+                onClick={() => setCurrentView('users')}
+                className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-colors font-medium ${
+                  currentView === 'users'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
+                }`}
+              >
+                <Shield className="w-5 h-5" />
+                <span>Users</span>
+              </button>
+            )}
           </div>
         </nav>
 
@@ -226,6 +271,12 @@ function App() {
         {currentView === 'groups' && (
           <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8">
             <FamilyGroupsList />
+          </div>
+        )}
+
+        {currentView === 'users' && (
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <UserManagement />
           </div>
         )}
       </div>
