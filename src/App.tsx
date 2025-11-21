@@ -20,7 +20,7 @@ function App() {
   const { persons } = usePersonStore()
   const { theme, toggleTheme } = useTheme()
   const { t, i18n } = useTranslation()
-  const { user, userProfile, permissions, loading, signOut } = useAuth()
+  const { user, userProfile, loading, signOut } = useAuth()
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'vi' : 'en'
