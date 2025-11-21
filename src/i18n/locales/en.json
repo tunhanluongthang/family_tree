@@ -1,0 +1,331 @@
+{
+  "app": {
+    "title": "Family Tree",
+    "subtitle": "Multi-Generation Genealogy Management System"
+  },
+  "nav": {
+    "home": "Home",
+    "people": "People",
+    "tree": "Tree View",
+    "groups": "Family Groups"
+  },
+  "theme": {
+    "toggleLabel": "Toggle theme"
+  },
+  "home": {
+    "welcome": "Welcome to Your Family Tree",
+    "description": "Build and manage your family connections across multiple generations. Connect families through marriages and preserve your family history.",
+    "getStarted": "Get Started",
+    "stats": {
+      "familyMembers": "Family Members",
+      "generations": "Generations",
+      "familyGroups": "Family Groups"
+    }
+  },
+  "people": {
+    "title": "Family Members",
+    "count": "{{count}} person in your family tree",
+    "count_plural": "{{count}} people in your family tree",
+    "backup": "Backup",
+    "addPerson": "Add Person",
+    "addFirstPerson": "Add First Person",
+    "searchPlaceholder": "Search by name...",
+    "filters": "Filters",
+    "loading": "Loading family members...",
+    "noMembers": {
+      "title": "No family members yet",
+      "description": "Start building your family tree by adding your first person"
+    },
+    "noResults": {
+      "title": "No results found",
+      "description": "Try adjusting your search query"
+    },
+    "filter": {
+      "gender": {
+        "label": "Gender",
+        "all": "All",
+        "male": "Male",
+        "female": "Female",
+        "other": "Other"
+      },
+      "photo": {
+        "label": "Profile Photo",
+        "all": "All",
+        "with": "With Photo",
+        "without": "Without Photo"
+      },
+      "status": {
+        "label": "Status",
+        "all": "All",
+        "living": "Living",
+        "deceased": "Deceased"
+      }
+    }
+  },
+  "personCard": {
+    "edit": "Edit",
+    "delete": "Delete",
+    "born": "Born",
+    "died": "Died:",
+    "living": "Living",
+    "addRelationship": "Add Relationship",
+    "linkExisting": "Link Existing",
+    "linkToExisting": "Link to Existing Person",
+    "addRelationships": "Add Relationships:",
+    "quickAddNew": "Or Quick Add New:",
+    "deleteConfirm": "Are you sure you want to delete {{name}}?",
+    "relationships": {
+      "parents": "Parents:",
+      "children": "Children:",
+      "spouse": "Spouse:",
+      "siblings": "Siblings:",
+      "addParent": "Add Parent",
+      "addChild": "Add Child",
+      "addSpouse": "Add Spouse",
+      "addSibling": "Add Sibling",
+      "parent": "Parent",
+      "child": "Child",
+      "spouseLabel": "Spouse",
+      "sibling": "Sibling"
+    }
+  },
+  "personForm": {
+    "titleEdit": "Edit Person",
+    "titleNew": "Add New Person",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "maidenName": "Maiden Name",
+    "gender": "Gender",
+    "dateOfBirth": "Date of Birth",
+    "birthDate": "Birth Date",
+    "deathDate": "Death Date",
+    "dateOfDeath": "Date of Death",
+    "placeOfBirth": "Place of Birth",
+    "birthPlace": "Birth Place",
+    "birthOrder": "Birth Order",
+    "placeOfDeath": "Place of Death",
+    "profilePhoto": "Profile Photo",
+    "biography": "Biography",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving...",
+    "updatePerson": "Update Person",
+    "addPerson": "Add Person",
+    "optional": "Optional",
+    "chooseFile": "Choose file",
+    "changePhoto": "Change photo",
+    "uploadPhoto": "Upload photo",
+    "removePhoto": "Remove photo",
+    "profilePreview": "Profile preview",
+    "selectGender": "Select...",
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Smith",
+      "maidenName": "Johnson",
+      "birthPlace": "New York, USA",
+      "birthOrder": "1",
+      "biography": "Share some memories, achievements, or stories..."
+    },
+    "helpText": {
+      "maidenName": "Birth surname (if applicable)",
+      "birthOrder": "Birth order among siblings (1 = oldest, 2 = second, etc.). Optional.",
+      "photoFormats": "Max size: 5MB. Supported formats: JPG, PNG, GIF"
+    },
+    "genderOptions": {
+      "male": "Male",
+      "female": "Female",
+      "other": "Other"
+    },
+    "errors": {
+      "invalidImage": "Please select an image file",
+      "imageTooLarge": "Image size must be less than 5MB",
+      "saveFailed": "Failed to save: {{message}}\n\nCheck console for details."
+    }
+  },
+  "exportImport": {
+    "title": "Backup & Restore",
+    "exportTab": "Export (Backup)",
+    "importTab": "Import (Restore)",
+    "export": {
+      "title": "Export Family Tree",
+      "heading": "📦 Export Your Family Tree",
+      "description": "Download a complete backup of your family tree data as a JSON file. This includes all people, relationships, and photos.",
+      "button": "Export to File",
+      "downloadButton": "Download Backup File",
+      "fileName": "family-tree-backup.json",
+      "stats": {
+        "people": "People:",
+        "relationships": "Relationships:"
+      },
+      "fileInfo": "File format: JSON • Safe to store anywhere • Can be imported anytime",
+      "successMessage": "Family tree exported successfully!"
+    },
+    "import": {
+      "title": "Import Family Tree",
+      "description": "Upload a previously exported family tree file",
+      "button": "Import from File",
+      "analyzing": "Analyzing...",
+      "importing": "Importing...",
+      "confirm": "Confirm Import",
+      "chooseFile": "Choose a backup file",
+      "dragDrop": "or drag and drop",
+      "selectedFile": "Selected File:",
+      "mode": {
+        "title": "Import Mode",
+        "merge": {
+          "title": "✅ Merge (Recommended)",
+          "description": "Add new data without deleting existing records. Duplicates will be skipped automatically.",
+          "button": "✅ Merge Data"
+        },
+        "replace": {
+          "title": "⚠️ Replace All (Dangerous)",
+          "description": "Delete ALL existing data and replace with backup. Use only for full restoration.",
+          "button": "⚠️ Replace All Data"
+        }
+      },
+      "analysis": {
+        "title": "Import Analysis:",
+        "newPeople": "✅ New People:",
+        "duplicatePeople": "Duplicate people (will be skipped)",
+        "newRelationships": "✅ New Relationships:",
+        "duplicateRelationships": "Duplicate relationships (will be skipped)",
+        "skipDuplicatePeople": "⏭️ Skip Duplicate People:",
+        "skipDuplicateRelationships": "⏭️ Skip Duplicate Relationships:",
+        "noDuplicates": "No duplicates detected - all records will be imported."
+      },
+      "fileStats": {
+        "totalPeople": "Total People in File:",
+        "totalRelationships": "Total Relationships in File:",
+        "exportDate": "Export Date:"
+      },
+      "confirmMerge": "This will add {{newPeople}} new people and {{newRelationships}} new relationships. {{duplicatePeople}} duplicate people and {{duplicateRelationships}} duplicate relationships will be skipped.",
+      "confirmMergeDialog": "✅ MERGE MODE (Safe)\n\nThis will add {{newPeople}} new people and {{newRelationships}} new relationships.\n\n{{duplicatePeople}} duplicate people and {{duplicateRelationships}} duplicate relationships will be skipped.\n\nYour existing data will NOT be deleted.\n\nContinue with merge?",
+      "confirmMergeSafe": "✅ MERGE MODE (Safe)\n\nThis will add {{newPeople}} new people and {{newRelationships}} new relationships.\n\nNo duplicates detected. Your existing data will NOT be affected.\n\nContinue with merge?",
+      "confirmReplace": "⚠️ WARNING: This will DELETE ALL {{existingPeople}} existing people and {{existingRelationships}} relationships, and replace them with {{newPeople}} people and {{newRelationships}} relationships from the import file. This action cannot be undone!",
+      "confirmReplaceDialog": "⚠️ DANGER: REPLACE MODE\n\nThis will DELETE ALL existing data and replace it with the imported data.\n\nAre you absolutely sure you want to continue?\n\nTIP: Export your current data first as a backup!",
+      "success": "✅ {{message}}",
+      "error": "Import failed. Please check the file format."
+    },
+    "close": "Close",
+    "tip": "💡 Tip: Export your data regularly to keep safe backups"
+  },
+  "quickAdd": {
+    "title": "Quick Add {{type}}",
+    "titleWithName": "Add {{type}} of {{name}}",
+    "description": "Add a new {{type}} for {{name}}",
+    "create": "Create {{type}}",
+    "creating": "Creating...",
+    "adding": "Adding...",
+    "add": "Add {{type}}",
+    "cancel": "Cancel",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "maidenName": "Maiden Name",
+    "gender": "Gender",
+    "birthDate": "Birth Date",
+    "marriageDate": "Marriage Date",
+    "selectGender": "Select...",
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "maidenName": "Birth surname"
+    },
+    "types": {
+      "parent": "parent",
+      "child": "child",
+      "spouse": "spouse",
+      "sibling": "sibling"
+    },
+    "errors": {
+      "failedToAdd": "Failed to add. Please try again."
+    }
+  },
+  "linkExisting": {
+    "title": "Link to Existing Person",
+    "forPerson": "For:",
+    "description": "Create a relationship between {{name}} and an existing person",
+    "selectPerson": "Select Person",
+    "selectRelationship": "Select Relationship Type",
+    "selectRelationshipType": "Select Relationship Type",
+    "link": "Create Link",
+    "linkRelationship": "Link Relationship",
+    "linking": "Linking...",
+    "cancel": "Cancel",
+    "choosePerson": "Choose a person...",
+    "noOtherPeople": "No other people in database",
+    "noOtherPeopleWarning": "No other people found. Add more people first, or use \"Quick Add New\" buttons.",
+    "marriageDateOptional": "Marriage Date (optional)",
+    "born": "born",
+    "selectPersonRequired": "Please select a person",
+    "linkFailed": "Failed to create relationship: {{message}}",
+    "relationships": {
+      "parent": "Parent",
+      "child": "Child",
+      "spouse": "Spouse",
+      "sibling": "Sibling"
+    },
+    "relationshipOptions": {
+      "addParent": "Add Parent",
+      "addChild": "Add Child",
+      "addSpouse": "Add Spouse",
+      "addSibling": "Add Sibling",
+      "parentDesc": "They are the parent",
+      "childDesc": "They are the child",
+      "spouseDesc": "They are married",
+      "siblingDesc": "They are siblings"
+    },
+    "descriptions": {
+      "parent": "Select who is {{name}}'s parent",
+      "child": "Select who is {{name}}'s child",
+      "spouse": "Select who is {{name}}'s spouse",
+      "sibling": "Select who is {{name}}'s sibling"
+    }
+  },
+  "tree": {
+    "title": "Family Tree View",
+    "emptyState": {
+      "title": "No Family Members Yet",
+      "description": "Add people and relationships to see your family tree"
+    },
+    "stats": {
+      "title": "Family Tree Stats",
+      "people": "People:",
+      "generations": "Generations:",
+      "connections": "Connections:"
+    },
+    "filters": {
+      "generationDepth": "Generation Depth",
+      "layout": "Layout",
+      "layoutVertical": "Vertical",
+      "layoutHorizontal": "Horizontal",
+      "focusedOn": "Focused on:",
+      "clearFocus": "Clear focus"
+    },
+    "generationOptions": {
+      "three": "3 Generations",
+      "five": "5 Generations",
+      "seven": "7 Generations",
+      "all": "All (10+)"
+    },
+    "legend": {
+      "title": "Legend",
+      "male": "Male",
+      "female": "Female",
+      "parentChild": "Parent-Child",
+      "married": "Married (💕)"
+    }
+  },
+  "common": {
+    "yes": "Yes",
+    "no": "No",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "close": "Close",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success"
+  }
+}

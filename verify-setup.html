@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Supabase Setup</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 { color: #333; }
+    button {
+      background: #6366f1;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      margin: 10px 5px 10px 0;
+    }
+    button:hover { background: #4f46e5; }
+    .success { color: #22c55e; font-weight: bold; }
+    .error { color: #ef4444; font-weight: bold; }
+    .info { background: #dbeafe; padding: 15px; border-radius: 6px; margin: 15px 0; }
+    pre { background: #f1f5f9; padding: 15px; border-radius: 6px; overflow-x: auto; }
+    .status { margin: 20px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔍 Supabase Setup Verification</h1>
+    <p>This tool will verify your Supabase connection and database setup.</p>
+
+    <div class="info">
+      <strong>Your Supabase URL:</strong> <span id="supabaseUrl">Loading...</span><br>
+      <strong>Key Status:</strong> <span id="keyStatus">Loading...</span>
+    </div>
+
+    <button onclick="testConnection()">1. Test Connection</button>
+    <button onclick="checkTables()">2. Check Tables</button>
+    <button onclick="testInsert()">3. Test Insert</button>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <script type="module">
+    import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm'
+
+    const SUPABASE_URL = 'https://pieklglhvymoyloqhhen.supabase.co'
+    const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBpZWtsZ2xodnltb3lsb3FoaGVuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjM2NTU4OTUsImV4cCI6MjA3OTIzMTg5NX0.G9EXp5Baa4gJM613n3KvHx3mKzkHNBJW5pV6p_FzZhw'
+
+    const supabase = createClient(SUPABASE_URL, SUPABASE_KEY)
+
+    document.getElementById('supabaseUrl').textContent = SUPABASE_URL
+    document.getElementById('keyStatus').textContent = SUPABASE_KEY ? '✓ Configured' : '✗ Missing'
+
+    window.testConnection = async function() {
+      const status = document.getElementById('status')
+      status.innerHTML = '<p>Testing connection...</p>'
+
+      try {
+        const { data, error } = await supabase.from('person').select('count')
+
+        if (error) {
+          status.innerHTML = `<p class="error">❌ Connection Error:</p><pre>${JSON.stringify(error, null, 2)}</pre>`
+
+          if (error.message.includes('relation "public.person" does not exist')) {
+            status.innerHTML += `
+              <div class="info">
+                <strong>⚠️ Tables don't exist!</strong><br><br>
+                You need to run the SQL schema in Supabase:<br>
+                1. Go to <a href="https://supabase.com/dashboard/project/pieklglhvymoyloqhhen/sql" target="_blank">Supabase SQL Editor</a><br>
+                2. Click "New Query"<br>
+                3. Copy entire contents of <code>supabase-schema.sql</code><br>
+                4. Paste and click "Run"
+              </div>
+            `
+          }
+        } else {
+          status.innerHTML = `<p class="success">✅ Connection successful!</p>`
+        }
+      } catch (err) {
+        status.innerHTML = `<p class="error">❌ Error:</p><pre>${err.message}</pre>`
+      }
+    }
+
+    window.checkTables = async function() {
+      const status = document.getElementById('status')
+      status.innerHTML = '<p>Checking tables...</p>'
+
+      const tables = ['person', 'relationship', 'family_group', 'person_family_group']
+      let results = '<h3>Table Status:</h3>'
+
+      for (const table of tables) {
+        try {
+          const { data, error } = await supabase.from(table).select('count').limit(1)
+
+          if (error) {
+            results += `<p class="error">❌ ${table}: ${error.message}</p>`
+          } else {
+            results += `<p class="success">✅ ${table}: exists</p>`
+          }
+        } catch (err) {
+          results += `<p class="error">❌ ${table}: ${err.message}</p>`
+        }
+      }
+
+      status.innerHTML = results
+    }
+
+    window.testInsert = async function() {
+      const status = document.getElementById('status')
+      status.innerHTML = '<p>Testing insert...</p>'
+
+      try {
+        const testPerson = {
+          first_name: 'Test',
+          last_name: 'Person',
+          date_of_birth: '1990-01-01'
+        }
+
+        const { data, error } = await supabase
+          .from('person')
+          .insert(testPerson)
+          .select()
+          .single()
+
+        if (error) {
+          status.innerHTML = `<p class="error">❌ Insert failed:</p><pre>${JSON.stringify(error, null, 2)}</pre>`
+
+          if (error.message.includes('permission denied')) {
+            status.innerHTML += `
+              <div class="info">
+                <strong>⚠️ Permission Error!</strong><br><br>
+                The RLS (Row Level Security) policies might not be set correctly.<br>
+                Make sure you ran the ENTIRE SQL schema including the policy section.
+              </div>
+            `
+          }
+        } else {
+          status.innerHTML = `<p class="success">✅ Insert successful!</p><pre>${JSON.stringify(data, null, 2)}</pre>`
+
+          // Clean up test data
+          await supabase.from('person').delete().eq('id', data.id)
+          status.innerHTML += `<p class="info">Test person was created and deleted successfully.</p>`
+        }
+      } catch (err) {
+        status.innerHTML = `<p class="error">❌ Error:</p><pre>${err.message}</pre>`
+      }
+    }
+
+    // Auto-run connection test on load
+    setTimeout(testConnection, 500)
+  </script>
+</body>
+</html>

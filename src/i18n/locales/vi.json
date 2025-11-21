@@ -1,0 +1,331 @@
+{
+  "app": {
+    "title": "Gia Phả",
+    "subtitle": "Hệ Thống Quản Lý Gia Phả Đa Thế Hệ"
+  },
+  "nav": {
+    "home": "Trang Chủ",
+    "people": "Thành Viên",
+    "tree": "Cây Gia Phả",
+    "groups": "Nhóm Gia Đình"
+  },
+  "theme": {
+    "toggleLabel": "Chuyển đổi giao diện"
+  },
+  "home": {
+    "welcome": "Chào Mừng Đến Với Gia Phả Của Bạn",
+    "description": "Xây dựng và quản lý các mối quan hệ gia đình qua nhiều thế hệ. Kết nối các gia đình thông qua hôn nhân và lưu giữ lịch sử gia đình của bạn.",
+    "getStarted": "Bắt Đầu",
+    "stats": {
+      "familyMembers": "Thành Viên Gia Đình",
+      "generations": "Thế Hệ",
+      "familyGroups": "Nhóm Gia Đình"
+    }
+  },
+  "people": {
+    "title": "Thành Viên Gia Đình",
+    "count": "{{count}} người trong cây gia phả của bạn",
+    "count_plural": "{{count}} người trong cây gia phả của bạn",
+    "backup": "Sao Lưu",
+    "addPerson": "Thêm Người",
+    "addFirstPerson": "Thêm Người Đầu Tiên",
+    "searchPlaceholder": "Tìm kiếm theo tên...",
+    "filters": "Bộ Lọc",
+    "loading": "Đang tải thành viên gia đình...",
+    "noMembers": {
+      "title": "Chưa có thành viên nào",
+      "description": "Bắt đầu xây dựng cây gia phả của bạn bằng cách thêm người đầu tiên"
+    },
+    "noResults": {
+      "title": "Không tìm thấy kết quả",
+      "description": "Thử điều chỉnh từ khóa tìm kiếm của bạn"
+    },
+    "filter": {
+      "gender": {
+        "label": "Giới Tính",
+        "all": "Tất Cả",
+        "male": "Nam",
+        "female": "Nữ",
+        "other": "Khác"
+      },
+      "photo": {
+        "label": "Ảnh Đại Diện",
+        "all": "Tất Cả",
+        "with": "Có Ảnh",
+        "without": "Không Có Ảnh"
+      },
+      "status": {
+        "label": "Tình Trạng",
+        "all": "Tất Cả",
+        "living": "Còn Sống",
+        "deceased": "Đã Mất"
+      }
+    }
+  },
+  "personCard": {
+    "edit": "Sửa",
+    "delete": "Xóa",
+    "born": "Sinh",
+    "died": "Mất:",
+    "living": "Còn Sống",
+    "addRelationship": "Thêm Quan Hệ",
+    "linkExisting": "Liên Kết Người Có Sẵn",
+    "linkToExisting": "Liên Kết Với Người Có Sẵn",
+    "addRelationships": "Thêm Quan Hệ:",
+    "quickAddNew": "Hoặc Thêm Mới Nhanh:",
+    "deleteConfirm": "Bạn có chắc chắn muốn xóa {{name}}?",
+    "relationships": {
+      "parents": "Cha Mẹ:",
+      "children": "Con Cái:",
+      "spouse": "Vợ/Chồng:",
+      "siblings": "Anh Chị Em:",
+      "addParent": "Thêm Cha/Mẹ",
+      "addChild": "Thêm Con",
+      "addSpouse": "Thêm Vợ/Chồng",
+      "addSibling": "Thêm Anh/Chị/Em",
+      "parent": "Cha/Mẹ",
+      "child": "Con",
+      "spouseLabel": "Vợ/Chồng",
+      "sibling": "Anh/Chị/Em"
+    }
+  },
+  "personForm": {
+    "titleEdit": "Sửa Thông Tin",
+    "titleNew": "Thêm Người Mới",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "maidenName": "Họ Khai Sinh",
+    "gender": "Giới Tính",
+    "dateOfBirth": "Ngày Sinh",
+    "birthDate": "Ngày Sinh",
+    "deathDate": "Ngày Mất",
+    "dateOfDeath": "Ngày Mất",
+    "placeOfBirth": "Nơi Sinh",
+    "birthPlace": "Nơi Sinh",
+    "birthOrder": "Thứ Tự Sinh",
+    "placeOfDeath": "Nơi Mất",
+    "profilePhoto": "Ảnh Đại Diện",
+    "biography": "Tiểu Sử",
+    "cancel": "Hủy",
+    "save": "Lưu",
+    "saving": "Đang lưu...",
+    "updatePerson": "Cập Nhật",
+    "addPerson": "Thêm Người",
+    "optional": "Tùy chọn",
+    "chooseFile": "Chọn tệp",
+    "changePhoto": "Thay đổi ảnh",
+    "uploadPhoto": "Tải ảnh lên",
+    "removePhoto": "Xóa ảnh",
+    "profilePreview": "Xem trước ảnh đại diện",
+    "selectGender": "Chọn...",
+    "placeholders": {
+      "firstName": "Văn",
+      "lastName": "Nguyễn",
+      "maidenName": "Trần",
+      "birthPlace": "Hà Nội, Việt Nam",
+      "birthOrder": "1",
+      "biography": "Chia sẻ kỷ niệm, thành tích hoặc câu chuyện..."
+    },
+    "helpText": {
+      "maidenName": "Họ khai sinh (nếu có)",
+      "birthOrder": "Thứ tự sinh trong anh chị em (1 = lớn nhất, 2 = thứ hai, v.v.). Tùy chọn.",
+      "photoFormats": "Kích thước tối đa: 5MB. Định dạng hỗ trợ: JPG, PNG, GIF"
+    },
+    "genderOptions": {
+      "male": "Nam",
+      "female": "Nữ",
+      "other": "Khác"
+    },
+    "errors": {
+      "invalidImage": "Vui lòng chọn tệp ảnh",
+      "imageTooLarge": "Kích thước ảnh phải nhỏ hơn 5MB",
+      "saveFailed": "Lỗi lưu: {{message}}\n\nXem console để biết thêm chi tiết."
+    }
+  },
+  "exportImport": {
+    "title": "Sao Lưu & Khôi Phục",
+    "exportTab": "Xuất (Sao Lưu)",
+    "importTab": "Nhập (Khôi Phục)",
+    "export": {
+      "title": "Xuất Gia Phả",
+      "heading": "📦 Xuất Gia Phả Của Bạn",
+      "description": "Tải xuống toàn bộ dữ liệu gia phả dưới dạng tệp JSON. Bao gồm tất cả thông tin người, quan hệ và ảnh.",
+      "button": "Xuất Ra Tệp",
+      "downloadButton": "Tải Xuống Tệp Sao Lưu",
+      "fileName": "gia-pha-sao-luu.json",
+      "stats": {
+        "people": "Người:",
+        "relationships": "Quan Hệ:"
+      },
+      "fileInfo": "Định dạng tệp: JSON • An toàn lưu trữ bất cứ đâu • Có thể nhập bất cứ lúc nào",
+      "successMessage": "Xuất gia phả thành công!"
+    },
+    "import": {
+      "title": "Nhập Gia Phả",
+      "description": "Tải lên tệp gia phả đã xuất trước đó",
+      "button": "Nhập Từ Tệp",
+      "analyzing": "Đang phân tích...",
+      "importing": "Đang nhập...",
+      "confirm": "Xác Nhận Nhập",
+      "chooseFile": "Chọn tệp sao lưu",
+      "dragDrop": "hoặc kéo và thả",
+      "selectedFile": "Tệp Đã Chọn:",
+      "mode": {
+        "title": "Chế Độ Nhập",
+        "merge": {
+          "title": "✅ Hợp Nhất (Khuyến Nghị)",
+          "description": "Thêm dữ liệu mới mà không xóa các bản ghi hiện có. Các bản trùng lặp sẽ tự động bị bỏ qua.",
+          "button": "✅ Hợp Nhất Dữ Liệu"
+        },
+        "replace": {
+          "title": "⚠️ Thay Thế Toàn Bộ (Nguy Hiểm)",
+          "description": "XÓA TẤT CẢ dữ liệu hiện có và thay thế bằng sao lưu. Chỉ sử dụng để khôi phục hoàn toàn.",
+          "button": "⚠️ Thay Thế Toàn Bộ"
+        }
+      },
+      "analysis": {
+        "title": "Phân Tích Nhập:",
+        "newPeople": "✅ Người Mới:",
+        "duplicatePeople": "Người trùng lặp (sẽ bị bỏ qua)",
+        "newRelationships": "✅ Quan Hệ Mới:",
+        "duplicateRelationships": "Quan hệ trùng lặp (sẽ bị bỏ qua)",
+        "skipDuplicatePeople": "⏭️ Bỏ Qua Người Trùng:",
+        "skipDuplicateRelationships": "⏭️ Bỏ Qua Quan Hệ Trùng:",
+        "noDuplicates": "Không phát hiện trùng lặp - tất cả bản ghi sẽ được nhập."
+      },
+      "fileStats": {
+        "totalPeople": "Tổng Số Người Trong Tệp:",
+        "totalRelationships": "Tổng Số Quan Hệ Trong Tệp:",
+        "exportDate": "Ngày Xuất:"
+      },
+      "confirmMerge": "Điều này sẽ thêm {{newPeople}} người mới và {{newRelationships}} quan hệ mới. {{duplicatePeople}} người trùng lặp và {{duplicateRelationships}} quan hệ trùng lặp sẽ bị bỏ qua.",
+      "confirmMergeDialog": "✅ CHẾ ĐỘ HỢP NHẤT (An Toàn)\n\nĐiều này sẽ thêm {{newPeople}} người mới và {{newRelationships}} quan hệ mới.\n\n{{duplicatePeople}} người trùng lặp và {{duplicateRelationships}} quan hệ trùng lặp sẽ bị bỏ qua.\n\nDữ liệu hiện tại của bạn sẽ KHÔNG bị xóa.\n\nTiếp tục hợp nhất?",
+      "confirmMergeSafe": "✅ CHẾ ĐỘ HỢP NHẤT (An Toàn)\n\nĐiều này sẽ thêm {{newPeople}} người mới và {{newRelationships}} quan hệ mới.\n\nKhông phát hiện trùng lặp. Dữ liệu hiện tại của bạn sẽ KHÔNG bị ảnh hưởng.\n\nTiếp tục hợp nhất?",
+      "confirmReplace": "⚠️ CẢNH BÁO: Điều này sẽ XÓA TẤT CẢ {{existingPeople}} người và {{existingRelationships}} quan hệ hiện có, và thay thế bằng {{newPeople}} người và {{newRelationships}} quan hệ từ tệp nhập. Hành động này không thể hoàn tác!",
+      "confirmReplaceDialog": "⚠️ NGUY HIỂM: CHẾ ĐỘ THAY THẾ\n\nĐiều này sẽ XÓA TẤT CẢ dữ liệu hiện có và thay thế bằng dữ liệu nhập.\n\nBạn có hoàn toàn chắc chắn muốn tiếp tục?\n\nGỢI Ý: Xuất dữ liệu hiện tại trước làm bản sao lưu!",
+      "success": "✅ {{message}}",
+      "error": "Nhập thất bại. Vui lòng kiểm tra định dạng tệp."
+    },
+    "close": "Đóng",
+    "tip": "💡 Mẹo: Xuất dữ liệu thường xuyên để giữ bản sao lưu an toàn"
+  },
+  "quickAdd": {
+    "title": "Thêm Nhanh {{type}}",
+    "titleWithName": "Thêm {{type}} của {{name}}",
+    "description": "Thêm {{type}} mới cho {{name}}",
+    "create": "Tạo {{type}}",
+    "creating": "Đang tạo...",
+    "adding": "Đang thêm...",
+    "add": "Thêm {{type}}",
+    "cancel": "Hủy",
+    "firstName": "Tên",
+    "lastName": "Họ",
+    "maidenName": "Họ Khai Sinh",
+    "gender": "Giới Tính",
+    "birthDate": "Ngày Sinh",
+    "marriageDate": "Ngày Kết Hôn",
+    "selectGender": "Chọn...",
+    "placeholders": {
+      "firstName": "Văn",
+      "lastName": "Nguyễn",
+      "maidenName": "Họ khai sinh"
+    },
+    "types": {
+      "parent": "cha/mẹ",
+      "child": "con",
+      "spouse": "vợ/chồng",
+      "sibling": "anh/chị/em"
+    },
+    "errors": {
+      "failedToAdd": "Không thể thêm. Vui lòng thử lại."
+    }
+  },
+  "linkExisting": {
+    "title": "Liên Kết Với Người Có Sẵn",
+    "forPerson": "Cho:",
+    "description": "Tạo quan hệ giữa {{name}} và người có sẵn",
+    "selectPerson": "Chọn Người",
+    "selectRelationship": "Chọn Loại Quan Hệ",
+    "selectRelationshipType": "Chọn Loại Quan Hệ",
+    "link": "Tạo Liên Kết",
+    "linkRelationship": "Liên Kết Quan Hệ",
+    "linking": "Đang liên kết...",
+    "cancel": "Hủy",
+    "choosePerson": "Chọn một người...",
+    "noOtherPeople": "Không có người nào khác trong cơ sở dữ liệu",
+    "noOtherPeopleWarning": "Không tìm thấy người nào khác. Hãy thêm người trước, hoặc sử dụng nút \"Thêm Mới Nhanh\".",
+    "marriageDateOptional": "Ngày Kết Hôn (tùy chọn)",
+    "born": "sinh",
+    "selectPersonRequired": "Vui lòng chọn một người",
+    "linkFailed": "Không thể tạo quan hệ: {{message}}",
+    "relationships": {
+      "parent": "Cha/Mẹ",
+      "child": "Con",
+      "spouse": "Vợ/Chồng",
+      "sibling": "Anh/Chị/Em"
+    },
+    "relationshipOptions": {
+      "addParent": "Thêm Cha/Mẹ",
+      "addChild": "Thêm Con",
+      "addSpouse": "Thêm Vợ/Chồng",
+      "addSibling": "Thêm Anh/Chị/Em",
+      "parentDesc": "Họ là cha/mẹ",
+      "childDesc": "Họ là con",
+      "spouseDesc": "Họ đã kết hôn",
+      "siblingDesc": "Họ là anh/chị/em"
+    },
+    "descriptions": {
+      "parent": "Chọn ai là cha/mẹ của {{name}}",
+      "child": "Chọn ai là con của {{name}}",
+      "spouse": "Chọn ai là vợ/chồng của {{name}}",
+      "sibling": "Chọn ai là anh/chị/em của {{name}}"
+    }
+  },
+  "tree": {
+    "title": "Cây Gia Phả",
+    "emptyState": {
+      "title": "Chưa Có Thành Viên Nào",
+      "description": "Thêm người và quan hệ để xem cây gia phả của bạn"
+    },
+    "stats": {
+      "title": "Thống Kê Gia Phả",
+      "people": "Người:",
+      "generations": "Thế Hệ:",
+      "connections": "Kết Nối:"
+    },
+    "filters": {
+      "generationDepth": "Độ Sâu Thế Hệ",
+      "layout": "Bố Cục",
+      "layoutVertical": "Dọc",
+      "layoutHorizontal": "Ngang",
+      "focusedOn": "Đang tập trung:",
+      "clearFocus": "Xóa tập trung"
+    },
+    "generationOptions": {
+      "three": "3 Thế Hệ",
+      "five": "5 Thế Hệ",
+      "seven": "7 Thế Hệ",
+      "all": "Tất Cả (10+)"
+    },
+    "legend": {
+      "title": "Chú Giải",
+      "male": "Nam",
+      "female": "Nữ",
+      "parentChild": "Cha Mẹ-Con",
+      "married": "Đã Kết Hôn (💕)"
+    }
+  },
+  "common": {
+    "yes": "Có",
+    "no": "Không",
+    "cancel": "Hủy",
+    "confirm": "Xác Nhận",
+    "delete": "Xóa",
+    "edit": "Sửa",
+    "save": "Lưu",
+    "close": "Đóng",
+    "loading": "Đang tải...",
+    "error": "Lỗi",
+    "success": "Thành Công"
+  }
+}
