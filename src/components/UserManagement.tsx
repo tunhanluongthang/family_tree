@@ -64,7 +64,7 @@ export function UserManagement() {
       setUsers(usersWithDetails)
     } catch (err: any) {
       console.error('Error fetching users:', err)
-      setError(err.message || 'Failed to fetch users')
+      setError(err.message || t('userManagement.errors.fetchFailed'))
     } finally {
       setLoading(false)
     }
@@ -83,14 +83,14 @@ export function UserManagement() {
       await fetchUsers()
       await refreshUserProfile()
     } catch (err: any) {
-      alert(`Failed to approve user: ${err.message}`)
+      alert(`${t('userManagement.errors.approveFailed')}: ${err.message}`)
     } finally {
       setActionLoading(null)
     }
   }
 
   const handleRejectUser = async (userId: string) => {
-    if (!confirm('Are you sure you want to reject this user? This action cannot be undone.')) {
+    if (!confirm(t('userManagement.confirmReject'))) {
       return
     }
 
@@ -106,7 +106,7 @@ export function UserManagement() {
 
       await fetchUsers()
     } catch (err: any) {
-      alert(`Failed to reject user: ${err.message}`)
+      alert(`${t('userManagement.errors.rejectFailed')}: ${err.message}`)
     } finally {
       setActionLoading(null)
     }
@@ -115,7 +115,7 @@ export function UserManagement() {
   const handleChangeRole = async (userId: string, newRole: UserRole) => {
     // Prevent changing own role
     if (userId === userProfile?.id) {
-      alert('You cannot change your own role')
+      alert(t('userManagement.cannotChangeOwnRole'))
       return
     }
 
@@ -124,7 +124,7 @@ export function UserManagement() {
       const ownerCount = users.filter(u => u.role === 'OWNER').length
       const user = users.find(u => u.id === userId)
       if (user?.role === 'OWNER' && ownerCount === 1) {
-        alert('Cannot change role: There must be at least one Owner')
+        alert(t('userManagement.mustHaveOneOwner'))
         return
       }
     }
@@ -141,7 +141,7 @@ export function UserManagement() {
       await fetchUsers()
       await refreshUserProfile()
     } catch (err: any) {
-      alert(`Failed to change role: ${err.message}`)
+      alert(`${t('userManagement.errors.changeRoleFailed')}: ${err.message}`)
     } finally {
       setActionLoading(null)
     }
@@ -177,7 +177,7 @@ export function UserManagement() {
     return (
       <div className="max-w-6xl mx-auto p-6">
         <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
-          Access denied. Only Owners can manage users.
+          {t('userManagement.accessDenied')}
         </div>
       </div>
     )
@@ -188,7 +188,7 @@ export function UserManagement() {
       <div className="max-w-6xl mx-auto p-6">
         <div className="flex items-center justify-center py-12">
           <Loader className="w-8 h-8 animate-spin text-indigo-600" />
-          <span className="ml-3 text-gray-600">Loading users...</span>
+          <span className="ml-3 text-gray-600">{t('userManagement.loading')}</span>
         </div>
       </div>
     )
@@ -202,9 +202,9 @@ export function UserManagement() {
       <div className="mb-8">
         <div className="flex items-center gap-3 mb-2">
           <Users className="w-8 h-8 text-indigo-600" />
-          <h1 className="text-3xl font-bold text-gray-800">User Management</h1>
+          <h1 className="text-3xl font-bold text-gray-800">{t('userManagement.title')}</h1>
         </div>
-        <p className="text-gray-600">Manage user accounts, roles, and permissions</p>
+        <p className="text-gray-600">{t('userManagement.subtitle')}</p>
       </div>
 
       {error && (
@@ -217,7 +217,7 @@ export function UserManagement() {
       {pendingUsers.length > 0 && (
         <div className="mb-8">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">
-            Pending Approvals ({pendingUsers.length})
+            {t('userManagement.pendingApprovals')} ({pendingUsers.length})
           </h2>
           <div className="space-y-3">
             {pendingUsers.map((user) => (
@@ -230,16 +230,16 @@ export function UserManagement() {
                     <span className="font-semibold text-gray-800">{user.email}</span>
                     <span className={`px-2 py-1 rounded-full text-xs font-medium border flex items-center gap-1 ${getRoleBadgeColor(user.role)}`}>
                       {getRoleIcon(user.role)}
-                      {user.role}
+                      {t(`userManagement.roles.${user.role}`)}
                     </span>
                   </div>
                   {user.claimed_person && (
                     <p className="text-sm text-gray-600">
-                      Claimed: {user.claimed_person.first_name} {user.claimed_person.last_name}
+                      {t('userManagement.claimed')}: {user.claimed_person.first_name} {user.claimed_person.last_name}
                     </p>
                   )}
                   <p className="text-xs text-gray-500 mt-1">
-                    Registered: {new Date(user.created_at).toLocaleDateString('vi-VN')}
+                    {t('userManagement.registered')}: {new Date(user.created_at).toLocaleDateString('vi-VN')}
                   </p>
                 </div>
                 <div className="flex gap-2">
@@ -253,7 +253,7 @@ export function UserManagement() {
                     ) : (
                       <Check className="w-4 h-4" />
                     )}
-                    Approve
+                    {t('userManagement.approve')}
                   </button>
                   <button
                     onClick={() => handleRejectUser(user.id)}
@@ -261,7 +261,7 @@ export function UserManagement() {
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors disabled:opacity-50 flex items-center gap-2"
                   >
                     <X className="w-4 h-4" />
-                    Reject
+                    {t('userManagement.reject')}
                   </button>
                 </div>
               </div>
@@ -273,23 +273,23 @@ export function UserManagement() {
       {/* Approved Users */}
       <div>
         <h2 className="text-xl font-semibold text-gray-800 mb-4">
-          Approved Users ({approvedUsers.length})
+          {t('userManagement.approvedUsers')} ({approvedUsers.length})
         </h2>
         <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
           <table className="w-full">
             <thead className="bg-gray-50 border-b border-gray-200">
               <tr>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  User
+                  {t('userManagement.table.user')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Role
+                  {t('userManagement.table.role')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Claimed Person
+                  {t('userManagement.table.claimedPerson')}
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Actions
+                  {t('userManagement.table.actions')}
                 </th>
               </tr>
             </thead>
@@ -311,10 +311,10 @@ export function UserManagement() {
                       disabled={actionLoading === user.id || user.id === userProfile?.id}
                       className={`px-3 py-1 rounded-lg text-sm font-medium border flex items-center gap-1 ${getRoleBadgeColor(user.role)} disabled:opacity-50`}
                     >
-                      <option value="OWNER">OWNER</option>
-                      <option value="ADMIN">ADMIN</option>
-                      <option value="CONTRIBUTOR">CONTRIBUTOR</option>
-                      <option value="VIEWER">VIEWER</option>
+                      <option value="OWNER">{t('userManagement.roles.OWNER')}</option>
+                      <option value="ADMIN">{t('userManagement.roles.ADMIN')}</option>
+                      <option value="CONTRIBUTOR">{t('userManagement.roles.CONTRIBUTOR')}</option>
+                      <option value="VIEWER">{t('userManagement.roles.VIEWER')}</option>
                     </select>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-600">
@@ -323,19 +323,19 @@ export function UserManagement() {
                         {user.claimed_person.first_name} {user.claimed_person.last_name}
                       </>
                     ) : (
-                      <span className="text-gray-400 italic">Not claimed</span>
+                      <span className="text-gray-400 italic">{t('userManagement.notClaimed')}</span>
                     )}
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm">
                     {user.id === userProfile?.id ? (
-                      <span className="text-gray-500 italic">You</span>
+                      <span className="text-gray-500 italic">{t('userManagement.you')}</span>
                     ) : (
                       <button
                         onClick={() => handleRejectUser(user.id)}
                         disabled={actionLoading === user.id}
                         className="text-red-600 hover:text-red-700 font-medium disabled:opacity-50"
                       >
-                        Remove
+                        {t('userManagement.remove')}
                       </button>
                     )}
                   </td>

@@ -382,6 +382,43 @@
     },
     "logout": "Sign Out"
   },
+  "userManagement": {
+    "title": "User Management",
+    "subtitle": "Manage user accounts, roles, and permissions",
+    "loading": "Loading users...",
+    "accessDenied": "Access denied. Only Owners can manage users.",
+    "pendingApprovals": "Pending Approvals",
+    "approvedUsers": "Approved Users",
+    "approve": "Approve",
+    "reject": "Reject",
+    "remove": "Remove",
+    "you": "You",
+    "claimed": "Claimed",
+    "notClaimed": "Not claimed",
+    "registered": "Registered",
+    "table": {
+      "user": "User",
+      "role": "Role",
+      "claimedPerson": "Claimed Person",
+      "actions": "Actions"
+    },
+    "roles": {
+      "OWNER": "OWNER",
+      "ADMIN": "ADMIN",
+      "CONTRIBUTOR": "CONTRIBUTOR",
+      "VIEWER": "VIEWER"
+    },
+    "confirmReject": "Are you sure you want to reject this user? This action cannot be undone.",
+    "confirmRemove": "Are you sure you want to remove this user? This action cannot be undone.",
+    "cannotChangeOwnRole": "You cannot change your own role",
+    "mustHaveOneOwner": "Cannot change role: There must be at least one Owner",
+    "errors": {
+      "fetchFailed": "Failed to fetch users",
+      "approveFailed": "Failed to approve user",
+      "rejectFailed": "Failed to reject user",
+      "changeRoleFailed": "Failed to change role"
+    }
+  },
   "common": {
     "yes": "Yes",
     "no": "No",

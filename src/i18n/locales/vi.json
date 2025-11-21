@@ -382,6 +382,43 @@
     },
     "logout": "Đăng Xuất"
   },
+  "userManagement": {
+    "title": "Quản Lý Người Dùng",
+    "subtitle": "Quản lý tài khoản, vai trò và quyền hạn người dùng",
+    "loading": "Đang tải người dùng...",
+    "accessDenied": "Truy cập bị từ chối. Chỉ chủ sở hữu mới có thể quản lý người dùng.",
+    "pendingApprovals": "Chờ Phê Duyệt",
+    "approvedUsers": "Người Dùng Đã Phê Duyệt",
+    "approve": "Phê Duyệt",
+    "reject": "Từ Chối",
+    "remove": "Xóa",
+    "you": "Bạn",
+    "claimed": "Đã liên kết",
+    "notClaimed": "Chưa liên kết",
+    "registered": "Đã đăng ký",
+    "table": {
+      "user": "Người Dùng",
+      "role": "Vai Trò",
+      "claimedPerson": "Người Đã Liên Kết",
+      "actions": "Thao Tác"
+    },
+    "roles": {
+      "OWNER": "CHỦ SỞ HỮU",
+      "ADMIN": "QUẢN TRỊ VIÊN",
+      "CONTRIBUTOR": "CỘNG TÁC VIÊN",
+      "VIEWER": "NGƯỜI XEM"
+    },
+    "confirmReject": "Bạn có chắc chắn muốn từ chối người dùng này? Hành động này không thể hoàn tác.",
+    "confirmRemove": "Bạn có chắc chắn muốn xóa người dùng này? Hành động này không thể hoàn tác.",
+    "cannotChangeOwnRole": "Bạn không thể thay đổi vai trò của chính mình",
+    "mustHaveOneOwner": "Không thể thay đổi vai trò: Phải có ít nhất một chủ sở hữu",
+    "errors": {
+      "fetchFailed": "Không thể tải người dùng",
+      "approveFailed": "Không thể phê duyệt người dùng",
+      "rejectFailed": "Không thể từ chối người dùng",
+      "changeRoleFailed": "Không thể thay đổi vai trò"
+    }
+  },
   "common": {
     "yes": "Có",
     "no": "Không",

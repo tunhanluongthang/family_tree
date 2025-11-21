@@ -26,7 +26,6 @@ export function SignUpWithClaim({ onSwitchToLogin }: SignUpWithClaimProps) {
   // Person search states
   const [searchQuery, setSearchQuery] = useState('')
   const [searchResults, setSearchResults] = useState<Person[]>([])
-  const [selectedPerson, setSelectedPerson] = useState<Person | null>(null)
   const [isSearching, setIsSearching] = useState(false)
 
   const handleGoogleSignIn = async () => {
@@ -133,7 +132,6 @@ export function SignUpWithClaim({ onSwitchToLogin }: SignUpWithClaimProps) {
   }
 
   const handleClaimPerson = async (person: Person) => {
-    setSelectedPerson(person)
     setError('')
 
     try {
