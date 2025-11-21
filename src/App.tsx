@@ -1,19 +1,25 @@
 import { useState } from 'react'
-import { Users, TreePine, Network, UsersRound, Moon, Sun, Languages } from 'lucide-react'
+import { Users, TreePine, Network, UsersRound, Moon, Sun, Languages, LogOut } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { PersonList } from './components/PersonList'
 import { FamilyTreeView } from './components/FamilyTreeView'
 import { FamilyGroupsList } from './components/FamilyGroupsList'
+import { Login } from './components/Login'
+import { SignUp } from './components/SignUp'
 import { usePersonStore } from './store/usePersonStore'
 import { useTheme } from './contexts/ThemeContext'
+import { useAuth } from './contexts/AuthContext'
 
 type View = 'home' | 'people' | 'tree' | 'groups'
+type AuthView = 'login' | 'signup'
 
 function App() {
   const [currentView, setCurrentView] = useState<View>('home')
+  const [authView, setAuthView] = useState<AuthView>('login')
   const { persons } = usePersonStore()
   const { theme, toggleTheme } = useTheme()
   const { t, i18n } = useTranslation()
+  const { user, loading, signOut } = useAuth()
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'en' ? 'vi' : 'en'
@@ -21,6 +27,37 @@ function App() {
     localStorage.setItem('language', newLang)
   }
 
+  const handleSignOut = async () => {
+    await signOut()
+  }
+
+  // Show loading state
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-indigo-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">{t('common.loading')}</p>
+        </div>
+      </div>
+    )
+  }
+
+  // Show auth screens if not logged in
+  if (!user) {
+    return (
+      <>
+        {authView === 'login' && (
+          <Login onSwitchToSignUp={() => setAuthView('signup')} />
+        )}
+        {authView === 'signup' && (
+          <SignUp onSwitchToLogin={() => setAuthView('login')} />
+        )}
+      </>
+    )
+  }
+
+  // Main app (user is authenticated)
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-800 transition-colors">
       <div className="container mx-auto px-4 py-8">
@@ -67,6 +104,18 @@ function App() {
                 ) : (
                   <Moon className="w-6 h-6 text-indigo-600 pointer-events-none" />
                 )}
+              </button>
+              <button
+                onClick={(e) => {
+                  e.preventDefault()
+                  e.stopPropagation()
+                  handleSignOut()
+                }}
+                className="p-3 rounded-lg bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors"
+                aria-label={t('auth.logout')}
+                type="button"
+              >
+                <LogOut className="w-6 h-6 text-red-600 dark:text-red-400 pointer-events-none" />
               </button>
             </div>
           </div>

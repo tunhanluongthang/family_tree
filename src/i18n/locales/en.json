@@ -315,6 +315,48 @@
       "married": "Married (💕)"
     }
   },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Sign in to access your family tree",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "submit": "Sign In",
+      "signingIn": "Signing in...",
+      "noAccount": "Don't have an account?",
+      "signUpLink": "Sign up"
+    },
+    "signUp": {
+      "title": "Create Account",
+      "subtitle": "Start building your family tree today",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "John Doe",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "password": "Password",
+      "passwordPlaceholder": "Create a strong password",
+      "passwordHint": "Minimum 6 characters",
+      "confirmPassword": "Confirm Password",
+      "confirmPasswordPlaceholder": "Re-enter your password",
+      "submit": "Create Account",
+      "creatingAccount": "Creating account...",
+      "hasAccount": "Already have an account?",
+      "loginLink": "Sign in",
+      "successMessage": "Account created successfully! Please check your email to verify your account."
+    },
+    "errors": {
+      "fillAllFields": "Please fill in all required fields",
+      "passwordTooShort": "Password must be at least 6 characters",
+      "passwordMismatch": "Passwords do not match",
+      "emailExists": "This email is already registered",
+      "invalidCredentials": "Invalid email or password",
+      "loginFailed": "Login failed. Please try again.",
+      "signUpFailed": "Sign up failed. Please try again."
+    },
+    "logout": "Sign Out"
+  },
   "common": {
     "yes": "Yes",
     "no": "No",

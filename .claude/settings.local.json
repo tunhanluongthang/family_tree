@@ -8,7 +8,9 @@
       "Bash(dir:*)",
       "Bash(nul)",
       "Bash(git commit:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "WebFetch(domain:family-tree-thien.vercel.app)",
+      "Bash(git push:*)"
     ],
     "deny": [],
     "ask": []

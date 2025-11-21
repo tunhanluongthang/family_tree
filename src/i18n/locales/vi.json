@@ -315,6 +315,48 @@
       "married": "Đã Kết Hôn (💕)"
     }
   },
+  "auth": {
+    "login": {
+      "title": "Chào Mừng Trở Lại",
+      "subtitle": "Đăng nhập để truy cập gia phả của bạn",
+      "email": "Địa Chỉ Email",
+      "emailPlaceholder": "email.cua.ban@example.com",
+      "password": "Mật Khẩu",
+      "passwordPlaceholder": "Nhập mật khẩu của bạn",
+      "submit": "Đăng Nhập",
+      "signingIn": "Đang đăng nhập...",
+      "noAccount": "Chưa có tài khoản?",
+      "signUpLink": "Đăng ký"
+    },
+    "signUp": {
+      "title": "Tạo Tài Khoản",
+      "subtitle": "Bắt đầu xây dựng gia phả của bạn ngay hôm nay",
+      "fullName": "Họ Và Tên",
+      "fullNamePlaceholder": "Nguyễn Văn A",
+      "email": "Địa Chỉ Email",
+      "emailPlaceholder": "email.cua.ban@example.com",
+      "password": "Mật Khẩu",
+      "passwordPlaceholder": "Tạo mật khẩu mạnh",
+      "passwordHint": "Tối thiểu 6 ký tự",
+      "confirmPassword": "Xác Nhận Mật Khẩu",
+      "confirmPasswordPlaceholder": "Nhập lại mật khẩu",
+      "submit": "Tạo Tài Khoản",
+      "creatingAccount": "Đang tạo tài khoản...",
+      "hasAccount": "Đã có tài khoản?",
+      "loginLink": "Đăng nhập",
+      "successMessage": "Tạo tài khoản thành công! Vui lòng kiểm tra email để xác minh tài khoản của bạn."
+    },
+    "errors": {
+      "fillAllFields": "Vui lòng điền đầy đủ các trường bắt buộc",
+      "passwordTooShort": "Mật khẩu phải có ít nhất 6 ký tự",
+      "passwordMismatch": "Mật khẩu không khớp",
+      "emailExists": "Email này đã được đăng ký",
+      "invalidCredentials": "Email hoặc mật khẩu không hợp lệ",
+      "loginFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
+      "signUpFailed": "Đăng ký thất bại. Vui lòng thử lại."
+    },
+    "logout": "Đăng Xuất"
+  },
   "common": {
     "yes": "Có",
     "no": "Không",
