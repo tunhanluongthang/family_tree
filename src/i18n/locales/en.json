@@ -346,6 +346,30 @@
       "loginLink": "Sign in",
       "successMessage": "Account created successfully! Please check your email to verify your account."
     },
+    "oauth": {
+      "google": "Continue with Google",
+      "apple": "Continue with Apple",
+      "or": "or"
+    },
+    "claim": {
+      "title": "Claim Your Profile",
+      "subtitle": "Find and link your account to your profile in the family tree",
+      "searchLabel": "Search for your profile",
+      "searchPlaceholder": "Enter your name...",
+      "search": "Search",
+      "resultsTitle": "Search Results",
+      "bornOn": "Born on",
+      "claimButton": "This is me",
+      "notFound": "Can't find your profile?",
+      "createNew": "Create new profile",
+      "successTitle": "Registration Successful!",
+      "successMessage": "Your account has been created and your profile has been linked.",
+      "pendingApproval": "⏳ Your account is pending approval from the administrator. You will receive an email notification when approved.",
+      "returnToLogin": "Return to login",
+      "noResults": "No results found. Try searching with a different name or create a new profile.",
+      "searchError": "Error searching. Please try again.",
+      "claimError": "Error claiming profile. Please try again."
+    },
     "errors": {
       "fillAllFields": "Please fill in all required fields",
       "passwordTooShort": "Password must be at least 6 characters",
@@ -353,7 +377,8 @@
       "emailExists": "This email is already registered",
       "invalidCredentials": "Invalid email or password",
       "loginFailed": "Login failed. Please try again.",
-      "signUpFailed": "Sign up failed. Please try again."
+      "signUpFailed": "Sign up failed. Please try again.",
+      "notAuthenticated": "You are not authenticated"
     },
     "logout": "Sign Out"
   },

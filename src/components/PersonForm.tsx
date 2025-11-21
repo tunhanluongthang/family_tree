@@ -222,8 +222,8 @@ export function PersonForm({ person, onSubmit, onCancel }: PersonFormProps) {
             />
           </div>
 
-          {/* Maiden Name */}
-          <div>
+          {/* Maiden Name - Hidden from UI as requested by user (kept in database for data flexibility) */}
+          {/* <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
               {t('personForm.maidenName')}
             </label>
@@ -235,7 +235,7 @@ export function PersonForm({ person, onSubmit, onCancel }: PersonFormProps) {
               placeholder={t('personForm.placeholders.maidenName')}
             />
             <p className="text-gray-500 text-sm mt-1">{t('personForm.helpText.maidenName')}</p>
-          </div>
+          </div> */}
 
           {/* Gender */}
           <div>
